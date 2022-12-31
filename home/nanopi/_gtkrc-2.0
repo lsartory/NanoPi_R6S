@@ -1,0 +1,8 @@
+# -- THEME AUTO-WRITTEN DO NOT EDIT
+include "/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc"
+
+gtk-theme-name  = "Adwaita-dark"
+
+include "/home/zap/.gtkrc.mine"
+
+# -- THEME AUTO-WRITTEN DO NOT EDIT

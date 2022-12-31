@@ -1,0 +1,4 @@
+dev-libs/gdl ~arm64
+dev-python/cachecontrol ~arm64
+dev-python/lockfile ~arm64
+media-gfx/inkscape ~arm64

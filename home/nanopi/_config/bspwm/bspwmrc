@@ -1,0 +1,43 @@
+#!/bin/sh
+
+xrandr --output HDMI-1 --mode 3840x2160 --rate 60
+xrandr --output HDMI-1 --set color_format rgb
+numlockx
+setxkbmap fr -option compose:caps
+xset m 3/2 10
+xrdb -merge .Xresources
+display -background black -backdrop -window root ~/.wallpaper
+xsetroot -cursor_name left_ptr
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+bspc config focus_follows_pointer true
+
+bspc config left_padding   20
+bspc config top_padding    20
+bspc config right_padding  20
+bspc config bottom_padding 20
+
+bspc config single_monocle     true
+bspc config borderless_monocle false
+bspc config gapless_monocle    true
+bspc config left_monocle_padding   419
+bspc config top_monocle_padding    579
+bspc config right_monocle_padding 1459
+bspc config bottom_monocle_padding 452
+bspc desktop -l monocle
+
+bspc config border_width 1
+bspc config window_gap   0
+
+bspc rule --add Zathura state=tiled
+
+~/.config/polybar/windowlist stop
+killall -q polybar
+while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
+polybar bottom &
+~/.config/polybar/windowlist &
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+xautolock -exit &> /dev/null
+xautolock -time 5 -locker slock &

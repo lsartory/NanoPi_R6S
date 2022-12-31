@@ -1,0 +1,6 @@
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+redshift -l 48.5734:7.7521 -b 0.6:0.6 &
+
+exec bspwm -c ~/.config/bspwm/bspwmrc

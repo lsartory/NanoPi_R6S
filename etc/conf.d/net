@@ -1,0 +1,8 @@
+bridge_br0="enP3p49s0 enP4p65s0"
+config_br0="192.168.0.2/24"
+routes_br0="default via 192.168.0.254"
+dns_servers_br0="8.8.8.8 1.1.1.1"
+
+bridge_forward_delay_br0=0
+bridge_hello_time_br0=1000
+bridge_stp_state_br0=1

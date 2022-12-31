@@ -1,0 +1,82 @@
+# Rofi
+super + space
+	rofi -modi drun,calc,window,ssh -show-icons -theme Arc-Dark -show drun
+
+# htop
+super + F1
+	xterm -e htop
+
+# terminal emulator
+super + F2
+	xterm
+
+# web browser
+super + F4
+	chromium-bin
+
+# redshift
+super + F5
+	(pgrep -x redshift > /dev/null && killall redshift) || redshift -l 48.5734:7.7521 -b 0.6:0.6
+
+# sleep
+super + F12
+	sync; echo mem > /sys/power/state
+
+# monitor off
+super + shift + F12
+	sleep 1; xset dpms force off
+
+# Print screen
+Print
+	import /tmp/screenshot.png; xclip -selection c -t image/png < /tmp/screenshot.png
+
+# lock screen
+super + BackSpace
+    sleep 1; xset dpms force off; slock
+
+########################################
+
+# quit/restart bspwm
+super + {_,shift + }Escape
+	pkill -USR1 -x sxhkd; bspc {quit,wm -r}
+
+# close and kill
+super + {_,shift + }c
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + Return
+	bspc desktop -l next
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous window in the current desktop
+super + {_,shift + }Tab
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus or send to the given desktop
+#super + {_,shift + }{1-9,0}
+super + {_,shift + }{ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+########################################
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+########################################
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}

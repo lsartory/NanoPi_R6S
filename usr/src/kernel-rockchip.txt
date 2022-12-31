@@ -1,0 +1,5 @@
+Origin:
+https://github.com/friendlyarm/kernel-rockchip.git
+
+Branch:
+nanopi5-v5.10.y_opt

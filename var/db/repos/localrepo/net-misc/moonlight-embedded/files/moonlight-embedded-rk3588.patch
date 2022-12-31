@@ -1,0 +1,52 @@
+From 118e814a76032ed5623d9eaa1d5556eb78c0fcab Mon Sep 17 00:00:00 2001
+From: bla <bla@bla.com>
+Date: Sat, 31 Dec 2022 14:39:12 +0100
+Subject: [PATCH] fix
+
+---
+ src/video/ffmpeg.c | 4 ++--
+ src/video/rk.c     | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/video/ffmpeg.c b/src/video/ffmpeg.c
+index 073673b..68a1c56 100644
+--- a/src/video/ffmpeg.c
++++ b/src/video/ffmpeg.c
+@@ -62,10 +62,10 @@ int ffmpeg_init(int videoFormat, int width, int height, int perf_lvl, int buffer
+   ffmpeg_decoder = perf_lvl & VAAPI_ACCELERATION ? VAAPI : SOFTWARE;
+   switch (videoFormat) {
+     case VIDEO_FORMAT_H264:
+-      decoder = avcodec_find_decoder_by_name("h264");
++      decoder = avcodec_find_decoder_by_name("h264_rkmpp");
+       break;
+     case VIDEO_FORMAT_H265:
+-      decoder = avcodec_find_decoder_by_name("hevc");
++      decoder = avcodec_find_decoder_by_name("hevc_rkmpp");
+       break;
+   }
+ 
+diff --git a/src/video/rk.c b/src/video/rk.c
+index 473512b..989ded6 100644
+--- a/src/video/rk.c
++++ b/src/video/rk.c
+@@ -44,7 +44,7 @@
+ #define RK_H265 16777220
+ 
+ #ifndef DRM_FORMAT_NV12_10
+-#define DRM_FORMAT_NV12_10 fourcc_code('N', 'A', '1', '2')
++#define DRM_FORMAT_NV12_10 fourcc_code('N', 'V', '1', '5')
+ #endif
+ 
+ void *pkt_buf = NULL;
+@@ -346,7 +346,7 @@ int rk_setup(int videoFormat, int width, int height, int redrawRate, void* conte
+         if (!prop) {
+           continue;
+         }
+-        if (!strcmp(prop->name, "type") && props->prop_values[j] == DRM_PLANE_TYPE_OVERLAY) {
++        if (!strcmp(prop->name, "type") && props->prop_values[j] == DRM_PLANE_TYPE_PRIMARY) {
+           plane_id = ovr->plane_id;
+         }
+         drmModeFreeProperty(prop);
+-- 
+2.38.2
+

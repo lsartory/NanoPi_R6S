@@ -1,0 +1,6 @@
+<x11-misc/numlockx-9999 **
+<x11-misc/polybar-9999 **
+<x11-misc/rofi-calc-9999 **
+<x11-misc/sxhkd-9999 **
+<x11-wm/bspwm-9999 **
+x11-themes/gtk-chtheme ~arm64

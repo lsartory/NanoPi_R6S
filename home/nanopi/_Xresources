@@ -1,0 +1,5 @@
+xterm*background: black
+xterm*foreground: grey
+xterm*SaveLines: 2000
+
+Xcursor.size: 16

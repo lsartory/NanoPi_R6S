@@ -1,0 +1,56 @@
+if [ "$SHELL" = "/bin/zsh" ];
+then
+  if [ "$SHLVL" -eq 1 ] && [ $(whoami) != "root" ] && [ $(tty) = "/dev/tty1" ] && (! pgrep -x X > /dev/null); then /usr/bin/startx; reset; clear; exit; fi;
+
+  export PATH="$HOME/.local/bin:$PATH"
+  export PATH="$HOME/.cargo/bin:$PATH"
+  export GPG_TTY=$(tty)
+
+  zstyle ':completion:*' completer _oldlist _expand _complete _match _correct _approximate _prefix
+  zstyle ':completion:*' expand prefix suffix
+  zstyle ':completion:*' file-sort name
+  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+  zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
+  zstyle ':completion:*' list-suffixes true
+  zstyle ':completion:*' match-original both
+  zstyle ':completion:*' max-errors 3 not-numeric
+  zstyle ':completion:*' preserve-prefix '//[^/]##/'
+  zstyle ':completion:*' use-compctl false
+  zstyle ':completion:*' verbose true
+
+  USER=$(whoami)
+  autoload -Uz compinit promptinit
+  compinit
+  promptinit; prompt gentoo
+  zstyle ':completion::complete:*' use-cache 1
+
+  HISTFILE=~/.histfile
+  HISTSIZE=5000
+  SAVEHIST=5000
+  setopt appendhistory autocd histignoredups
+  unsetopt beep
+  bindkey -e
+
+  bindkey '^[[1~' beginning-of-line
+  bindkey '^[[4~' end-of-line
+  bindkey "^[[H" beginning-of-line
+  bindkey "^[[F" end-of-line
+  bindkey "^[[5~" up-line-or-history
+  bindkey "^[[6~" down-line-or-history
+  bindkey "^[[3~" delete-char
+
+  bindkey "^[[1;5D" emacs-backward-word
+  bindkey "^[[1;5C" emacs-forward-word
+
+  export WORDCHARS='*?_[]~=&;!#$%^(){}'
+
+  case $TERM in (*xterm*|rxvt|(dt|k|E)term)
+    precmd () { print -Pn "\e]0;%n@%m: %~\a" }
+    preexec () { print -Pn "\e]0;%n@%m: $1\a" }
+    ;;
+  esac
+
+  alias grep='grep --colour=auto'
+  alias ll='ls -lah'
+  alias ls='ls --color=auto'
+fi
