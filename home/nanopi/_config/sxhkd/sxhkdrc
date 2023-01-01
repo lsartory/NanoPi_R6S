@@ -12,7 +12,7 @@ super + F2
 
 # web browser
 super + F4
-	chromium-bin
+	firefox
 
 # redshift
 super + F5

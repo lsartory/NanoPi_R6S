@@ -1,5 +1,0 @@
-app-text/ghostscript-gpl cups
-app-text/xmlto text
-dev-libs/libxml2 icu
-sys-libs/zlib minizip
-www-client/chromium-bin widevine
