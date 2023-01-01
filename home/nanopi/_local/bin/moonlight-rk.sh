@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <hostname>"
+    exit
+fi
+
 xautolock -exit &> /dev/null
 xset s off -dpms
 xrandr --output HDMI-1 --mode 1920x1080 --rate 60
