@@ -39,6 +39,7 @@ sys-fs/simple-mtpfs
 sys-kernel/linux-firmware
 sys-process/htop
 www-client/chromium-bin
+www-client/firefox
 www-client/links
 x11-apps/mesa-progs
 x11-apps/setxkbmap
