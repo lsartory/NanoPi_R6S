@@ -24,6 +24,7 @@ media-sound/alsa-utils
 media-sound/pavucontrol
 media-video/libva-utils
 media-video/mpv
+net-ftp/atftp
 net-misc/freerdp
 net-misc/moonlight-embedded
 net-misc/moonlight-qt

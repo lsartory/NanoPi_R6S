@@ -13,7 +13,7 @@
 
 # <fs>                  <mountpoint>                    <type>          <opts>                  <dump/pass>
 /dev/mmcblk2p2          /boot                           ext4            noauto,noatime          1 2
-/dev/mmcblk2p3          /                               btrfs           noauto,noatime          0 1
+/dev/mmcblk2p3          /                               btrfs           noatime                 0 1
 
 /dev/mmcblk0p1          /usr/src/kernel-rockchip        btrfs           subvol=src,noatime      0 2
 /dev/mmcblk0p1          /var/tmp                        btrfs           subvol=tmp,noatime      0 2
