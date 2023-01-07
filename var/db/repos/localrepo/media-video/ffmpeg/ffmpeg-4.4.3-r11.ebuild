@@ -337,6 +337,7 @@ PATCHES=(
 	"${FILESDIR}"/chromium-r1.patch
 	"${FILESDIR}"/${PN}-5.0-backport-ranlib-build-fix.patch
 	"${FILESDIR}"/${P}-clang-14-ff_seek_frame_binary-crash.patch
+	"${FILESDIR}"/ffmpeg-4.2.7-libsdl2-new-version-scheme.patch
 )
 
 MULTILIB_WRAPPED_HEADERS=(
