@@ -8,7 +8,7 @@ fi
 xautolock -exit &> /dev/null
 xset s off -dpms
 
-mpv "$@"
+/usr/bin/mpv "$@"
 
 xset s on +dpms
 xautolock -time 5 -locker slock &
