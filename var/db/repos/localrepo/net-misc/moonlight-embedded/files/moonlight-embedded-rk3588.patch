@@ -1,7 +1,7 @@
 From 118e814a76032ed5623d9eaa1d5556eb78c0fcab Mon Sep 17 00:00:00 2001
-From: bla <bla@bla.com>
+From: Lambert Sartory <lambert.sartory@gmail.com>
 Date: Sat, 31 Dec 2022 14:39:12 +0100
-Subject: [PATCH] fix
+Subject: [PATCH] fix RK3588 video output
 
 ---
  src/video/ffmpeg.c | 4 ++--
