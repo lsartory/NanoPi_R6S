@@ -1,0 +1,2 @@
+#!/bin/sh
+curl -s -X GET "https://api.paperspace.io/machines/getMachinePublic?machineId=psf4smrx2" -H "X-Api-Key: $(cat ~/.local/bin/psf4smrx2-apikey)" | sed 's@.*"state"\s*:\s*"\([^"]\+\)".*"events".*@\1\n@'

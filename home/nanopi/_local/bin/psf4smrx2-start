@@ -1,0 +1,2 @@
+#!/bin/sh
+curl -s -X POST "https://api.paperspace.io/machines/psf4smrx2/start" -H "X-Api-Key: $(cat ~/.local/bin/psf4smrx2-apikey)" | sed 's@.*"message"\s*:\s*"\([^"]\+\)".*@\1\n@'

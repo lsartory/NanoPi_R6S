@@ -1,0 +1,5 @@
+#!/bin/sh
+psf4smrx2-start
+while [ "$(psf4smrx2-state)" != "ready" ]; do echo -n .; sleep 5; done
+echo
+moonlight-rk "$(curl -s -X GET "https://api.paperspace.io/machines/getMachinePublic?machineId=psf4smrx2" -H "X-Api-Key: $(cat ~/.local/bin/psf4smrx2-apikey)" | sed 's@.*"publicIpAddress"\s*:\s*"\([^"]\+\)".*@\1@')"
