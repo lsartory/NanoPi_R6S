@@ -29,6 +29,7 @@ net-misc/freerdp
 net-misc/moonlight-embedded
 net-misc/moonlight-qt
 net-misc/ntp
+net-misc/yt-dlp
 sci-calculators/qalculate-gtk
 sys-apps/busybox
 sys-apps/ethtool
