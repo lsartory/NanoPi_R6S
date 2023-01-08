@@ -1,1 +1,1 @@
-media-video/ffmpeg chromium libass libdrm sdl x264 x265
+media-video/ffmpeg chromium libass libdrm mp3 sdl vorbis x264 x265
