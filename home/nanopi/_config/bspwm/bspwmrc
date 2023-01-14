@@ -2,6 +2,7 @@
 
 xrandr --output HDMI-1 --mode 3840x2160 --rate 60
 xrandr --output HDMI-1 --set color_format rgb
+xset s on +dpms
 numlockx
 setxkbmap fr -option compose:caps
 xset m 3/2 10
