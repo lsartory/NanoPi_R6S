@@ -4,7 +4,7 @@ super + space
 
 # htop
 super + F1
-	xterm -e htop
+	xterm -e 'print -Pn "\e]0;htop\a"; htop'
 
 # terminal emulator
 super + F2
@@ -24,7 +24,7 @@ super + F12
 
 # monitor off
 super + shift + F12
-	sleep 1; xset dpms force off
+	sleep 0.5; xset dpms force off
 
 # Print screen
 Print
@@ -32,7 +32,7 @@ Print
 
 # lock screen
 super + BackSpace
-    sleep 1; xset dpms force off; slock
+	sleep 0.5; xset dpms force off; slock
 
 ########################################
 

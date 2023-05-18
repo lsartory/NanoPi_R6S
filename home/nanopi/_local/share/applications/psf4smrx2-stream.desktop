@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=psf4smrx2
+Comment=Stream the psf4smrx2 desktop
+Exec=xterm -e 'print -Pn "\e]0;psf4smrx2\a"; PATH=$PATH:~/.local/bin ~/.local/bin/psf4smrx2-stream'
+Icon=moonlight
+Type=Application
