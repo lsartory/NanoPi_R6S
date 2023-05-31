@@ -6,8 +6,8 @@ inherit cmake flag-o-matic
 
 inherit git-r3
 EGIT_REPO_URI="https://github.com/rockchip-linux/mpp.git"
-#EGIT_REPO_URI="https://github.com/JeffyCN/rockchip_mirrors.git"
-#EGIT_BRANCH="mpp"
+EGIT_COMMIT="59f7ccc6edafd6620511e0b179e0fd8f01934fe5"
+#EGIT_COMMIT="062c17526523f22ca0ecd7c5756813e53c6b37e3" fail
 SRC_URI=""
 
 KEYWORDS="arm64"
