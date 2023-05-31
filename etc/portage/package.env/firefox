@@ -1,1 +1,2 @@
+net-libs/nodejs make-j2.conf
 www-client/firefox notmpfs.conf make-j2.conf
